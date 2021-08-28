@@ -1,0 +1,14 @@
+When you fork a repository, a copy of the original repository is established on your GitHub account. This permits read+write access to the "copy".
+
+When the original repository resource has commits that would benefit your copy, follow these steps to update your fork's master branch. You could update other branches, but typical workflow is to update master against the original repository.
+
+    Open a Terminal
+    cd to your project directory
+    git remote add upstream <url-of-original-repository>
+    git branch and verify you are on master branch
+    git pull --rebase upstream master
+
+Step #5 will fetch all new commits of the "original" repository, apply them to master branch from the last merge-base, then include all of your branch's commits "on top".
+
+Any time you need to update your fork again, simply run the command in step #5.
+
